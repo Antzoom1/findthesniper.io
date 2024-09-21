@@ -37,7 +37,7 @@ func NewUser(dependencies UserDependencies) User {
 	}
 }
 
-// New creates a new user given a valid connection and a valid user entity
+// New creates a new user given a valid connection and a valid user
 func (u *User) New(ctx context.Context, newConnection domains.Connection, newUser domains.User) (*domains.User, error) {
 	if err := newConnection.Validate(); err != nil {
 		return nil, internal.NewErrorf(internal.ErrorCodeBadRequest, "%v", err)

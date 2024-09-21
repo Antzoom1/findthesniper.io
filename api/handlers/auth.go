@@ -19,12 +19,11 @@ import (
 )
 
 var (
-	ErrAuthAlreadyAuthenticated = errors.New("Cannot access this resource while logged in.")
-	ErrAuthDiscord              = errors.New("Failed to retrieve Discord profile from response.")
-	ErrAuthGitHub               = errors.New("Failed to retrieve GitHub profile from response.")
-	ErrAuthGoogle               = errors.New("Failed to retrieve Google profile from response.")
-	ErrAuthInvalidToken         = errors.New("Must provide a valid access token.")
-	ErrAuthProfile              = errors.New("Failed to retrieve profile from response.")
+	ErrAuthDiscord      = errors.New("Failed to retrieve Discord profile from response.")
+	ErrAuthGitHub       = errors.New("Failed to retrieve GitHub profile from response.")
+	ErrAuthGoogle       = errors.New("Failed to retrieve Google profile from response.")
+	ErrAuthInvalidToken = errors.New("Must provide a valid access token.")
+	ErrAuthProfile      = errors.New("Failed to retrieve profile from response.")
 )
 
 type auth struct {
@@ -171,7 +170,7 @@ func (a *auth) authenticate(w http.ResponseWriter, r *http.Request) {
 	// Get existing session or create a new one
 	session, _ := a.session.Get(w, r, false)
 	if session != nil && session.IsAuthenticated() {
-		render.Respond(w, r, internal.NewErrorf(internal.ErrorCodeForbidden, "%v", ErrAuthAlreadyAuthenticated))
+		render.Respond(w, r, internal.NewErrorf(internal.ErrorCodeForbidden, "%v", ErrAlreadyLoggedIn))
 		return
 	} else if session == nil || session.IsExpired() {
 		newSession := domains.NewSession()
