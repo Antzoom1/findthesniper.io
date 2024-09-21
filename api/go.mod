@@ -16,7 +16,7 @@ require (
 	github.com/unrolled/secure v1.15.0
 	github.com/uptrace/bun v1.2.3
 	github.com/uptrace/bun/dialect/mysqldialect v1.2.3
-	golang.org/x/oauth2 v0.18.0
+	golang.org/x/oauth2 v0.23.0
 )
 
 require (
@@ -27,7 +27,6 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
@@ -55,8 +54,6 @@ require (
 	golang.org/x/mod v0.21.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
 	golang.org/x/text v0.18.0 // indirect
-	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
